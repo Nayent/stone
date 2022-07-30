@@ -33,10 +33,10 @@ CREATE TABLE transaction (
     ref_date TIMESTAMP NOT NULL,
     external_agency VARCHAR(5),
     external_account_number VARCHAR(10),
-    internal_account INTEGER NOT NULL,
+    internal_account_id INTEGER NOT NULL,
     transaction_type_id INTEGER NOT NULL,
-    CONSTRAINT internal_account
-        FOREIGN KEY(internal_account)
+    CONSTRAINT internal_account_id
+        FOREIGN KEY(internal_account_id)
             REFERENCES account(id),
     CONSTRAINT transaction_type_id
         FOREIGN KEY(transaction_type_id)
@@ -45,3 +45,4 @@ CREATE TABLE transaction (
 
 
 CREATE INDEX transaction_ref_date ON transaction (ref_date);
+CREATE INDEX id_account ON transaction (internal_account_id);

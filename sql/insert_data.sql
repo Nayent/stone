@@ -26,7 +26,7 @@ INSERT INTO account(name, cpf, agency, account_number) VALUES
 -----
 
 
-INSERT INTO transaction(amount, ref_date, external_agency, external_account_number, internal_account, transaction_type_id) VALUES
+INSERT INTO transaction(amount, ref_date, external_agency, external_account_number, internal_account_id, transaction_type_id) VALUES
     (20700, '2022-01-01'::date, '00001', '1234567890', 1, 1),
     (21700, '2022-02-01'::date, '00001', '1234567890', 2, 1),
     (22700, '2022-03-01'::date, '00001', '1234567890', 1, 1),

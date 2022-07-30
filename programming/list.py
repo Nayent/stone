@@ -32,13 +32,12 @@ shopping_list = {
 email_list = [
     'test1@gmail.com',
     'test2@gmail.com',
-    # 'test3@gmail.com',
     'test3@gmail.com',
 ]
 
 shopping_list = {
     'banana': {
-        'quantity': 0,
+        'quantity': 1,
         'price': 100,
     }
 }

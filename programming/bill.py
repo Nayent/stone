@@ -41,6 +41,7 @@ class Bill:
         return True
 
     def validate_empty_list(self):
+        # Return the empty list
         iter_dict = {
             'email': self.email_list,
             'shopping': self.shopping_list,
@@ -51,18 +52,21 @@ class Bill:
         return True
 
     def validate_qnt_price(self):
+        # Return the item that has negative value
         for item, info in self.shopping_list.items():
             if info['quantity'] < 0 or info['price'] < 0:
                 raise Exception(f"The item '{item}' has negative value!")
         return True
 
     def price_all_items(self):
+        # Return total price
         full_price = 0
         for info in self.shopping_list.values():
             full_price += info['quantity'] * info['price']
         return full_price
     
     def split_bill(self):
+        # Return a dict with email as the key and the amount he needs to pay
         amount_email = {}
         aux = 1
         remainder = self.amount % len(self.email_list)
@@ -77,6 +81,7 @@ class Bill:
         return amount_email
     
     def split(self):
+        # Main function
         self.validate_duplicate_email()
         self.validate_empty_list()
         self.validate_qnt_price()
